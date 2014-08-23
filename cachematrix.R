@@ -5,17 +5,23 @@
 
 makeCacheMatrix <- function(x = matrix()) {
       i <- NULL
+      # set the value of the matrix
       set <- function(y) {
             x <<- y
             i <<- NULL
       }
+      # get the value of the matrix
       get <- function() x
+      # set the value of the inverse
       setinverse <- function(inv) i <<- inv
+      # get the value of the inverse
       getinverse <- function() i
+      # list of all the above functions
       list(set = set, get = get,
            setinverse = setinverse,
            getinverse = getinverse)
 }
+
 ## The function "cacheSolve" checks if the inverse has been calculated.
 ## If the inverse was already calculated: the inverse from the cache will be 
 ## presented computation. When the inverse can not be found in the cache, 
